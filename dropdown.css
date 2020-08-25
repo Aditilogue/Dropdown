@@ -1,0 +1,25 @@
+
+body 
+{
+  background-color: #C1C71B;
+}
+      
+h1 
+{
+  font-family: Palatino;
+  font-size: 45px;
+  color: white;
+  text-align: center;
+}
+form
+{
+  font-family: Palatino, Charcoal, sans-serif;
+  font-size: 20px;
+  width: 400px;
+  padding: 30px;
+  border: 5px solid white;
+  margin: auto;
+  color: white;
+  text-align:center;  
+}
+
