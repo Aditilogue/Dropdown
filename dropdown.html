@@ -3,57 +3,61 @@
       <head>
            <link rel="stylesheet" type="text/css" href="dropdown.css">
                <script>
-                      function conditions()
+                   function conditions()
+                  {
+                        var status=document.getElementById("countries");
+                        if(status.value === "USA")
                         {
-                          var states=document.getElementById('countries').value;
-                             if(states==="USA")
-                               {
-                                    var op2 = ["Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana"];
-
-                               }
-                             else if(states==="India")
-                               {
-                                 var op2 = ["Andra Pradesh","Arunanchal Pradesh","Assam","Gujrat","Jharkhand","Uttar Pradesh"];
-                               }
-                             else if(states==="SriLanka")
-                               {
-                                 var op2 = ["Anuradhapura","Badulla","Batticaloa","Colombo"];     
-                               }
-                             else
-                               {
-                                 var op2 = ["England","Wales","Scotland","Northern Ireland"];
-                              }
-                          
-                        var states="";
-                        
-                        for(var i=0;i<op2.length;i++)
-                              {
-                                    states = states +"<option value=" + op2[i] + ">" + op2[i] + "</option>";
-                              }
-                        document.getElementById("states").innerHTML = states;
-                        }                
+                             document.getElementById("drpdwn").style.visibility="visible"; document.getElementById("txf").style.visibility="hidden";
+                        }
+                        else if(status.value === "chooseCountry")
+                        {
+                             document.getElementById("drpdwn").style.visibility="hidden"; document.getElementById("txf").style.visibility="hidden";
+                        }
+                        else 
+                        {   
+                              document.getElementById("drpdwn").style.visibility="hidden";  document.getElementById("txf").style.visibility="visible";
+                        }
+                  }   
+                      
+                            
                </script>
       </head>
       
  <body>
+       
       <h1><br>Dropdown List of Countries and States</h1> 
       <hr><br><br>
             
     <form>
         <label for="countries">Countries: </label>
-           <select name="countries" id="countries" onchange="conditions()">
+            <select name="countries" id="countries" onchange="conditions()">
               <option value="chooseCountry">Choose Country</option>
               <option value="USA">USA</option>
               <option value="India">India</option>
               <option value="SriLanka">Sri Lanka</option>
               <option value="Britain">UK</option>  
-           </select> 
-    
-     <div> <br>
-        <label for="states">States:</label>
-            <select id = "states" onchange = "conditions()"></select>                  
-     </div> <br>
-           <input type="submit" value="Submit">
+            </select> 
+                            <br><br>
+          
+      <div1 class="txt" id="drpdwn">
+          <label for="states">States: </label>
+             <select name="states" id="states">
+              <option value="chooseState">Choose State</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>  
+             </select> 
+      </div1> 
+                             <br><br>
+      <div class="txt" id="txf">States:
+            <input type="text" name="state">
+          
+      </div>
+                              <br>
+            <input type="submit" value="Submit">
+          
     </form>
  
  </body>
